@@ -8,7 +8,7 @@ from Algorithms.iterative_policy_evaluation import grid_problem_values, cookie_p
 from Algorithms.greedy_policy import play_greedy_greed, play_greedy_cookie, play_greedy_gambler
 from Algorithms.value_iteration import grid_problem_value_iteration, cookie_problem_value_iteration, gambler_problem_value_iteration
 from Algorithms.value_iteration_player import play_value_iteration_greed, play_value_iteration_cookie, play_value_iteration_gambler
-
+from Algorithms.gambler_optimal_values import plot_optimal_values_graph
 
 def get_action_from_user(actions):
     print("Valid actions:")
@@ -83,11 +83,12 @@ if __name__ == '__main__':
     #print("Value Iteration")
     # grid_problem_value_iteration(10)
     # cookie_problem_value_iteration(3)
-    # gambler_problem_value_iteration(0.51)
+    policy = gambler_problem_value_iteration(0.55)
 
     # play_value_iteration_greed(10)
     # play_value_iteration_cookie(3)
-    play_value_iteration_gambler(0.51)
+    # play_value_iteration_gambler(0.51)
+    plot_optimal_values_graph(policy)
 
 
 

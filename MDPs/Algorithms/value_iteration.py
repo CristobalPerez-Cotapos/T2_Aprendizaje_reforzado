@@ -15,7 +15,7 @@ class Policy:
         best_value = float('-inf')
         for action in actions:
             transitions = self.problem.get_transitions(state, action)
-            value = sum(prob * (reward + self.V[s_next]) for prob, s_next, reward in transitions)
+            value = round(sum(prob * (reward + self.V[s_next]) for prob, s_next, reward in transitions),5)
             if value > best_value:
                 best_value = value
                 best_action = action
