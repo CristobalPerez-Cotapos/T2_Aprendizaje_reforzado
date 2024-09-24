@@ -4,8 +4,10 @@ from datetime import datetime
 from Problems.CookieProblem import CookieProblem
 from Problems.GridProblem import GridProblem
 from Problems.GamblerProblem import GamblerProblem
-from Algorithms.iterative_policy_evaluation import grid_problem_values
+from Algorithms.iterative_policy_evaluation import grid_problem_values, cookie_problem_values, gambler_problem_values
 from Algorithms.greedy_policy import play_greedy_greed, play_greedy_cookie, play_greedy_gambler
+from Algorithms.value_iteration import grid_problem_value_iteration, cookie_problem_value_iteration, gambler_problem_value_iteration
+from Algorithms.value_iteration_player import play_value_iteration_greed, play_value_iteration_cookie, play_value_iteration_gambler
 
 
 def get_action_from_user(actions):
@@ -69,13 +71,23 @@ if __name__ == '__main__':
     # play_gambler_problem()
 
 
-    # grid_problem_values()
+    #print("Iterative Policy Evaluation")
+    # grid_problem_values(10)
     # cookie_problem_values()
-    # gambler_problem_values()
+    # gambler_problem_values(0.51)
 
     # play_greedy_greed(10)
     # play_greedy_cookie(10)
     # play_greedy_gambler(0.4)
+
+    #print("Value Iteration")
+    # grid_problem_value_iteration(10)
+    # cookie_problem_value_iteration(3)
+    # gambler_problem_value_iteration(0.51)
+
+    # play_value_iteration_greed(10)
+    # play_value_iteration_cookie(3)
+    play_value_iteration_gambler(0.51)
 
 
 
