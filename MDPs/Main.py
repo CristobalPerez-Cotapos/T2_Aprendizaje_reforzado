@@ -72,22 +72,24 @@ if __name__ == '__main__':
 
 
     #print("Iterative Policy Evaluation")
-    # grid_problem_values(10)
+    # grid_problem_values(3)
     # cookie_problem_values()
     # gambler_problem_values(0.51)
 
-    # play_greedy_greed(10)
-    # play_greedy_cookie(10)
+    # play_greedy_greed(3)
+    # play_greedy_cookie(5)
     # play_greedy_gambler(0.4)
 
     #print("Value Iteration")
     # grid_problem_value_iteration(10)
     # cookie_problem_value_iteration(3)
-    policy = gambler_problem_value_iteration(0.55)
+    policy = gambler_problem_value_iteration(0.40)
 
     # play_value_iteration_greed(10)
     # play_value_iteration_cookie(3)
     # play_value_iteration_gambler(0.51)
+    
+    
     plot_optimal_values_graph(policy)
 
 

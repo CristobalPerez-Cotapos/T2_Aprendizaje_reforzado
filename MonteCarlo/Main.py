@@ -1,5 +1,6 @@
 from Environments.BlackjackEnv import BlackjackEnv
 from Environments.CliffEnv import CliffEnv
+from MonteCarloAlgorithm import on_policy_every_visit_mc_control
 
 
 def get_action_from_user(actions):
@@ -40,5 +41,9 @@ def play_cliff():
 
 
 if __name__ == '__main__':
-    play_blackjack()
+    # play_blackjack()
     # play_cliff()
+
+    #policy = on_policy_every_visit_mc_control(BlackjackEnv())
+    policy = on_policy_every_visit_mc_control(CliffEnv(), episodes=200000, evaluation_episodes=1000, epsilon=0.1)
+

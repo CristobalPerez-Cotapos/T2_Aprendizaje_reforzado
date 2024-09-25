@@ -28,6 +28,15 @@ class BlackjackEnv(AbstractEnv):
             points += 10
         return points
 
+    @property
+    def states(self):
+        states = []
+        for player_points in range(12, 22):
+            for player_has_usable_as in [False, True]:
+                for dealer_points in range(1, 11):
+                    states.append((player_points, player_has_usable_as, dealer_points))
+        return states
+
     @staticmethod
     def __has_usable_as(hand):
         return 1 in hand and sum(hand) < 12

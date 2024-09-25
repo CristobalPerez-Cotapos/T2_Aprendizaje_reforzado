@@ -17,6 +17,14 @@ class CliffEnv(AbstractEnv):
     @property
     def action_space(self):
         return [(1, 0), (-1, 0), (0, 1), (0, -1)]
+    
+    @property
+    def states(self):
+        states = []
+        for row in range(self.__height):
+            for col in range(self.__width):
+                states.append((row, col))
+        return states
 
     def reset(self):
         self.__timestep = 0
